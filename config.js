@@ -3,13 +3,13 @@ import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
 global.owner = [
-  ['79524197466', 'ZloiAdmiN', true],
-  ['79524197466'], 
-  ['795241974666'] 
+  ['79531126750', '─•••꧔ꦿꦼꦿ꧇Серёга꧇꧔ꦿꦼꦿ•••─', true],
+  ['79531126750'], 
+  ['79531126750'] 
 ] //Numeros de owner 
 
-global.mods = ['79524197466'] 
-global.prems = ['79524197466']
+global.mods = ['79531126750'] 
+global.prems = ['79531126750']
 global.APIs = { // API Prefix
   // name: 'https://website'
   xteam: 'https://api.xteam.xyz', 

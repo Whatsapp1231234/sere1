@@ -48,8 +48,8 @@ $ pkg install git -y
 $ pkg install nodejs -y
 $ pkg install ffmpeg -y
 $ pkg install imagemagick -y
-$ git clone https://github.com/Whats-bot/zloi2
-$ cd zloi2
+$ git clone https://github.com/Whatsapp1231234/sere1
+$ cd sere1
 $ npm i 
 $ npm start
 ```

@@ -26,16 +26,16 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/Whats-bot/zloi2",
+    "homepage": "https://github.com/Whatsapp1231234/sere1",
     "author": {
-        "name": "FG98"
+        "name": "sere1"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Whats-bot/zloi2"
+        "url": "git+https://github.com/Whatsapp1231234/sere1"
     },
     "bugs": {
-        "url": "https://github.com/Whats-bot/zloi2/issues"
+        "url": "https://github.com/Whatsapp1231234/sere1/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
