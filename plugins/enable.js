@@ -183,7 +183,7 @@ const listMessage = {
 ≡ Lista de Opciones
 
 ┌─⊷ *ADMIN*
-▢ welcome
+▢ приветствие
 ▢ antilink
 ▢ detect 
 ▢ document
@@ -213,6 +213,6 @@ m.reply(`
 }
 handler.help = ['вкл', 'выкл'].map(v => v + 'ючить <option>')
 handler.tags = ['nable']
-handler.command = /^((вкл|ючить)выкл|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
+handler.command = /^((вкл|ючить)выкл|(tru|fals)e|(turn)?ючить(вкл|выкл)|[01])$/i
 
 export default handler
