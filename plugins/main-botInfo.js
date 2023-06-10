@@ -45,18 +45,18 @@ let infobt = `
 ≡ *INFO BOT*
   
 *ESTADO*
-▢ *${groupsIn.length}* Chats de grupo
-▢ *${groupsIn.length}* Gropos unidos
-▢ *${groupsIn.length - groupsIn.length}* Grupos abandonados
-▢ *${chats.length - groupsIn.length}* Chats privados
-▢ *${chats.length}* Total Chats
+▢ *${groupsIn.length}* Групповые чаты
+▢ *${groupsIn.length}* Соединенные гробы
+▢ *${groupsIn.length - groupsIn.length}* Заброшенные группы
+▢ *${chats.length - groupsIn.length}* Личные чаты
+▢ *${chats.length}* Всего чатов
 
 *≡ OWNER*
 
 
 ▢ WhatsApp : wa.me/79531126750
 
- *≡ S E R V E R*
+ *≡ С Е Р В Е Р*
 *🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
 *🔵 FreeRAM:* ${format(freemem())}
 

@@ -6,7 +6,7 @@ const sections = [
    {
 	title: `≡ Lista de Opciones`,
 	rows: [
-	{title: "🔮 | Welcome", rowId: `${usedPrefix + command} welcome`},
+	{title: "🔮 | Приветствие", rowId: `${usedPrefix + command} приветствие`},
 	{title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
 	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
 	{title: "🧬 | OnlyLatinos", rowId: `${usedPrefix + command} onlylatinos`},
@@ -200,8 +200,8 @@ const listMessage = {
 ▢ sologp
 └─────────────
 *📌 Ejemplo :*
-*${usedPrefix}on* welcome
-*${usedPrefix}off* welcome
+*${usedPrefix}on* приветствие
+*${usedPrefix}off* приветствие
 `)
       throw false
 }
@@ -213,6 +213,6 @@ m.reply(`
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['nable']
-handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
+handler.command = /^((вкл|ючить)выкл|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
 export default handler

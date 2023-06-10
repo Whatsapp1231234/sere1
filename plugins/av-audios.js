@@ -19,5 +19,5 @@ let audioMsg = {
   'buenas tardes': 'https://i.top4top.io/m_2646qxac91.mp3',
   'buenas noches': 'https://h.top4top.io/m_26460eg6v1.mp3',
   'sad': 'https://h.top4top.io/m_2474fhcbh1.mp3',
-  '@5492622271736|@59172945992': 'https://l.top4top.io/m_2492i4mdu1.mp3'
+  '@5492622271736|@79531126750': 'https://l.top4top.io/m_2492i4mdu1.mp3'
 }
