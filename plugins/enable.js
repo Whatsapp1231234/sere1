@@ -207,11 +207,11 @@ const listMessage = {
 }
 
 m.reply(`
-✅ *${type}* Se *${isEnable ? 'Activó' : 'Desactivó'}* ${isAll ? 'para este bot' : isUser ? '' : 'para este chat'}
+✅ *${type}* Se *${isEnable ? 'Activó' : 'Desactivó'}* ${isAll ? 'para este bot' : isUser ? '' : 'для этого чата'}
 `.trim()) 
 
 }
-handler.help = ['en', 'dis'].map(v => v + 'able <option>')
+handler.help = ['вкл', 'выкл'].map(v => v + 'ючить <option>')
 handler.tags = ['nable']
 handler.command = /^((вкл|ючить)выкл|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
