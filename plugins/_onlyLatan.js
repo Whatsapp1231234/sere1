@@ -6,7 +6,7 @@ handler.before = async function (m, {conn, isAdmin, isBotAdmin, isOwner} ) {
   let chat = global.db.data.chats[m.chat];
   
   if (isBotAdmin && chat.onlyLatinos && !isAdmin && !isOwner) {
-    let forbidPrefixes = [ "7", ""];
+    let forbidPrefixes = [ "7", "9"];
 
     for (let prefix of forbidPrefixes) {
       if (m.sender.startsWith(prefix)) {

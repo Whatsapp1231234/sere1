@@ -21,10 +21,10 @@ ${user.afkReason ? ' \n▢ *Razón :* ' + user.afkReason : ''}
             continue
         let reason = user.afkReason || ''
         m.reply(`
-💤 El usuario que mencionas está AFK 
+💤 Пользователь, которого вы упоминаете, находится в AFK 
 
-${reason ? '▢ *Razón* : ' + reason : '▢ *Razón* : Sin razón'}
-▢ *AFK Durante :* ${(new Date - afkTime).toTimeString()}
+${reason ? '▢ *Причина* : ' + reason : '▢ *Причина* : Без причины'}
+▢ *АФК Во Время :* ${(new Date - afkTime).toTimeString()}
   `.trim())
     }
     return true
