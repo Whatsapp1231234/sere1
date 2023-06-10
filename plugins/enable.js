@@ -207,7 +207,7 @@ const listMessage = {
 }
 
 m.reply(`
-✅ *${type}* Se *${isEnable ? 'Activó' : 'Desactivó'}* ${isAll ? 'para este bot' : isUser ? '' : 'для этого чата'}
+✅ *${type}*  *${isEnable ? 'Activó' : 'Готова'}* ${isAll ? 'для этого бота' : isUser ? '' : 'для этого чата'}
 `.trim()) 
 
 }
