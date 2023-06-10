@@ -38,7 +38,7 @@ const listMessage = {
   let type = (args[0] || '').toLowerCase()
   let isAll = false, isUser = false
   switch (type) {
-    case 'welcome':
+    case 'приветствие':
     case 'bv':
     case 'bienvenida':
       if (!m.isGroup) {
@@ -200,8 +200,8 @@ const listMessage = {
 ▢ sologp
 └─────────────
 *📌 Ejemplo :*
-*${usedPrefix}on* приветствие
-*${usedPrefix}off* приветствие
+*${usedPrefix}включить* приветствие
+*${usedPrefix}выключить* приветствие
 `)
       throw false
 }
