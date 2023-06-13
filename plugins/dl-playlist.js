@@ -3,7 +3,7 @@ import { youtubeSearch } from '@bochilteam/scraper'
 import yts from 'yt-search'
 let handler = async(m, { conn, usedPrefix, text, args, command }) => {
 
-    if (!text) throw `✳️ Введите название песни\n\n*📌 Ejemplo*\n*${usedPrefix + command}* Lil Peep hate my fuccn life `
+    if (!text) throw `✳️ Ingresa el título de una canción\n\n*📌 Ejemplo*\n*${usedPrefix + command}* Lil Peep hate my fuccn life `
     m.react('📀')
     let result = await yts(text)
     let ytres = result.videos

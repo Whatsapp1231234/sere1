@@ -45,18 +45,36 @@ let infobt = `
 ≡ *INFO BOT*
   
 *ESTADO*
-▢ *${groupsIn.length}* Групповые чаты
-▢ *${groupsIn.length}* Соединенные гробы
-▢ *${groupsIn.length - groupsIn.length}* Заброшенные группы
-▢ *${chats.length - groupsIn.length}* Личные чаты
-▢ *${chats.length}* Всего чатов
+▢ *${groupsIn.length}* Chats de grupo
+▢ *${groupsIn.length}* Gropos unidos
+▢ *${groupsIn.length - groupsIn.length}* Grupos abandonados
+▢ *${chats.length - groupsIn.length}* Chats privados
+▢ *${chats.length}* Total Chats
 
 *≡ OWNER*
+  *FG98*
+▢ Instagram :
+  • https://instagram.com/fg98_ff
+▢ WhatsApp :
+  • (escribe solo si es necesario) 
+▢ GitHub :
+  • https://github.com/FG98F
+▢ Telegram : 
+  • t.me/fgsupp_bot (FG) 
+  • t.me/fg98ff (canal)
+  • t.me/fgawgp (grupo)
+▢ YouTube : 
+  • https://youtube.com/fg98f
+  
+ *≡ HELPERS*
+  *CRISS*
+▢ Instagram : https://www.instagram.com/sayurizuniga3
+▢ WhatsApp : wa.me/
+  *ANDREA*
+▢ Instagram : https://
+▢ WhatsApp : wa.me/573125484672
 
-
-▢ WhatsApp : wa.me/79531126750
-
- *≡ С Е Р В Е Р*
+ *≡ S E R V E R*
 *🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
 *🔵 FreeRAM:* ${format(freemem())}
 
@@ -68,6 +86,6 @@ m.reply(infobt)
 }
 handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['инфо', 'infobot', 'botinfo']
+handler.command = ['info', 'infobot', 'botinfo']
 
 export default handler

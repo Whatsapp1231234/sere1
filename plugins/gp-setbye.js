@@ -3,12 +3,12 @@
 let handler = async (m, { conn, text, isROwner, isOwner }) => {
   if (text) {
     global.db.data.chats[m.chat].sBye = text
-    m.reply('✅ Было установлено прощальное послание')
-  } else throw `✳️ Введите сообщение\n@user (упоминание)`
+    m.reply('✅ Se estableció el mensaje de despedida')
+  } else throw `✳️ Ingrese el mensaje\n@user (mención)`
 }
-handler.help = ['прощание <текст>']
+handler.help = ['setbye <text>']
 handler.tags = ['group']
-handler.command = ['прощание'] 
+handler.command = ['setbye'] 
 handler.admin = true
 handler.owner = false
 

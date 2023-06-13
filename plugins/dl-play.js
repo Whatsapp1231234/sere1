@@ -2,29 +2,29 @@
 import yts from 'yt-search'
 let handler = async (m, { conn, command, text, usedPrefix }) => {
 	
-	if (!text) throw `✳️ Введите название песни\n\n📌Пример *${usedPrefix + command}* Лил Пип ненавидит мою жизнь`
+	if (!text) throw `✳️ Ingresa el título de una canción\n\n📌Ejemplo *${usedPrefix + command}* Lil Peep hate my life`
 	let res = await yts(text)
 	let vid = res.videos[0]
-	if (!vid) throw `✳️ Видео/Аудио не найдено`
+	if (!vid) throw `✳️ Vídeo/Audio no encontrado`
 	let { title, description, thumbnail, videoId, timestamp, views, ago, url } = vid
 	//const url = 'https://www.youtube.com/watch?v=' + videoId
-	m.реагировать('🎧')
+	m.react('🎧')
 	let play = `
-	≡ *МУЗЫКА*
+	≡ *FG MUSIC*
 ┌──────────────
-▢ 📌 *Заголовок* : ${title}
-▢ 📆 *Печатный:* ${ago}
+▢ 📌 *Название* : ${title}
+▢ 📆 *Опубликовано:* ${ago}
 ▢ ⌚ *Продолжительность:* ${timestamp}
-▢ 👀 *Вид:* ${views}
+▢ 👀 *Просмотрено:* ${views}
 └──────────────`
  await conn.sendButton(m.chat, play, fgig, thumbnail, [
     ['🎶 MP3', `${usedPrefix}fgmp3 ${url}`],
     ['🎥 MP4', `${usedPrefix}fgmp4 ${url}`]
   ], m, rpl)
 }
-handler.help = ['play']
+handler.help = ['песня']
 handler.tags = ['dl']
-handler.command = ['play', 'playvid']
+handler.command = ['play', 'песня']
 handler.disabled = true
 
 export default handler

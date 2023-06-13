@@ -2,63 +2,63 @@
 let handler = async (m, { conn, usedPrefix, command, args: [event], text }) => {
 
   let chat = global.db.data.chats[m.chat]
-  if (!chat.welcome) throw `✳️ Чтобы использовать эту команду, вы должны активировать приветствие с помощью *${usedPrefix}on* приветствие`
+  if (!chat.welcome) throw `✳️ Para usar este comando debe actvar las Bienvenidas con *${usedPrefix}on* welcome`
   let te = `
   ┌─⊷ *EVENTOS*
-  ▢ приветствие
+  ▢ welcome
   ▢ bye
   ▢ promote
   ▢ demote
   └───────────
   
-  📌 Например :
+  📌 Ejemplo :
   
-  *${usedPrefix + command}*приветствие @user`
+  *${usedPrefix + command}* welcome @user`
 
-  if (!event) return await m.reply(te)
+if (!event) return await m.reply(te) 
 
-  let mentions = text.replace(event, '').trimStart()
-  let who = mentions ? conn.parseMention(mentions) : []
-  let part = who.length ? who : [m.sender]
-  let act = false
-  m.reply(`✅ Имитирующий ${event}...`)
-  switch (event.toLowerCase()) {
-    case 'add':
-    case 'bienvenida':
-    case 'invite':
-    case 'welcome':
-      act = 'add'
-      break
-    case 'bye':
-    case 'despedida':
-    case 'leave':
-    case 'remove':
-      act = 'remove'
-      break
+let mentions = text.replace(event, '').trimStart()
+let who = mentions ? conn.parseMention(mentions) : []
+let part = who.length ? who : [m.sender]
+let act = false
+m.reply(`✅ Simulando ${event}...`)
+switch (event.toLowerCase()) {
+        case 'add':
+        case 'bienvenida':
+        case 'invite':
+        case 'welcome':
+           act = 'add'
+         break 
+        case 'bye':
+        case 'despedida':
+        case 'leave':
+        case 'remove':
+         act = 'remove'
+        break
 
-    case 'promote':
-    case 'promover':
-      act = 'promote'
-      break
+        case 'promote':
+        case 'promover':
+          act = 'promote'
+        break
 
-    case 'demote':
-    case 'degradar':
-      act = 'demote'
-      break
+        case 'demote':
+        case 'degradar':
+         act = 'demote'
+        break
 
-    default:
+default:
 
-      throw te
-  }
-  if (act) return conn.participantsUpdate({
-    id: m.chat,
-    participants: part,
-    action: act
-  })
+throw te
+}
+if (act) return conn.participantsUpdate({
+id: m.chat,
+participants: part,
+action: act
+})
 }
 handler.help = ['simulate <event> @user']
 handler.tags = ['group']
-handler.command = ['simular', 'simulate']
+handler.command = ['simular', 'simulate'] 
 handler.admin = true
 handler.group = true
 

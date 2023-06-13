@@ -6,12 +6,12 @@ handler.before = async function (m, {conn, isAdmin, isBotAdmin, isOwner} ) {
   let chat = global.db.data.chats[m.chat];
   
   if (isBotAdmin && chat.onlyLatinos && !isAdmin && !isOwner) {
-    let forbidPrefixes = [ "7", "9"];
+    let forbidPrefixes = ["212", "265", "234", "258", "263", "967", "20", "92", "91"];
 
     for (let prefix of forbidPrefixes) {
       if (m.sender.startsWith(prefix)) {
-        m.reply('✳️ В эту группу допускаются только русско говорящие люди', m.sender)
-        await conn.groupParticipantsUpdate(m.chat, [m.sender], 'удалить');
+        m.reply('✳️ Индусам тут делать нехер!!!', m.sender)
+        await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
         return false;
       }
     }

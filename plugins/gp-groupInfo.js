@@ -10,7 +10,7 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 ┌──「 *Информация о группе* 」
 ▢ *♻️ИД:*
    • ${groupMetadata.id}
-▢ *🔖Название* : 
+▢ *🔖Номер* : 
 • ${groupMetadata.subject}
 ▢ *👥Участников* :
 • ${participants.length}
@@ -32,7 +32,7 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 • Снятие админа: ${sDemote}
 
 ▢ *📌Описание группы* :
-   • ${groupMetadata.desc?.toString() || 'неизвестный'}
+   • ${groupMetadata.desc?.toString() || 'desconocido'}
 `.trim()
     conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }

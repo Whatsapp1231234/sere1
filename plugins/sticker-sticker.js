@@ -14,7 +14,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (/webp|image|video/g.test(mime)) {
       if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('Máximo 10 segundos')
       let img = await q.download?.()
-      if (!img) throw `✳️ Responde a una imagen o video con*${usedPrefix + command}*`
+      if (!img) throw `✳️ Отвечайте на изображение или видео с помощью*${usedPrefix + command}*`
       let out
       try {
         stiker = await sticker(img, false, f, g)
@@ -41,9 +41,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     else throw 'La conversión ha fallado, intenta enviar primero *imagen/video/gif* y luego responde con el comando'
   }
 }
-handler.help = ['sticker']
+handler.help = ['стикер', 'с']
 handler.tags = ['sticker']
-handler.command = ['s', 'sticker'] 
+handler.command = ['с', 'стикер'] 
 
 export default handler
 

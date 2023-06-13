@@ -8,14 +8,14 @@ let tags = {
   'main': 'ACERCA DE',
   'game': 'JUEGOS',
   'econ': 'NIVEL & ECONOMIA',
-  'rg': 'REGISTRO',
+  'rg': 'Регистрация',
   'sticker': 'STICKER',
-  'img': 'IMAGEN',
+  'img': 'Изображения',
   'maker': 'MAKER',
-  'prem': 'PREMIUM',
-  'group': 'GRUPO',
-  'nable': 'EN/DISABLE OPCIONES', 
-  'nime': 'ANIME',
+  'prem': 'Премиум функции',
+  'group': 'Команды для группы',
+  'nable': 'Включение и выключение автоматических функций', 
+  'nime': 'Аниме',
   'rnime': 'ANIME REACCION',
   'dl': 'DESCARGAS',
   'tools': 'TOOLS',
@@ -28,7 +28,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-◈ ━━━━━ *BoT* ━━━━━ ◈
+◈ ━━━━━ *ZloiBoT* ━━━━━ ◈
  
 👋🏻 _Привет_ *%name*
 🧿 Уровень : *%level* 

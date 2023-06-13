@@ -7,27 +7,32 @@ const sections = [
 	title: `≡ Список опций`,
 	rows: [
 	{title: "🔮 | Приветствие", rowId: `${usedPrefix + command} приветствие`},
-	{title: "🌎 | Публичный", rowId: `${usedPrefix + command} публичный`},,
+	{title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
+	{title: "🔞 | 18+", rowId: `${usedPrefix + command} 18+`},
+	{title: "🧬 | Антиараб", rowId: `${usedPrefix + command} антиараб`},
 	{title: "🔗 | Антиссылка", rowId: `${usedPrefix + command} антиссылка`},
-    {title: "🚫 | Противоскользящий", rowId: `${usedPrefix + command} противоскользящий`},
-	{title: "⏏️ | Уроввень", rowId: `${usedPrefix + command} уроввень`},
-	{title: "🗣️ | Чат-бот", rowId: `${usedPrefix + command} чатбот`},
-	{title: "🔎 | Обнаруживать", rowId: `${usedPrefix + command} обнаруживать`},
-	{title: "🛡️ | Ограничивать", rowId: `${usedPrefix + command} ограничивать`},
-	{title: "👥 | Только-группы", rowId: `${usedPrefix + command} толькогруппы`}
+    {title: "🚫 | Антиудаление", rowId: `${usedPrefix + command} антиудаление`},
+	{title: "⏏️ | Автоуровень", rowId: `${usedPrefix + command} автоуровень`},
+	{title: "🗣️ | Чатбот", rowId: `${usedPrefix + command} чатбот`},
+	{title: "🔎 | Слежка", rowId: `${usedPrefix + command} слежка`},
+	{title: "📑 | Документ", rowId: `${usedPrefix + command} документ`},
+	{title: "🛡️ | Ботадмин", rowId: `${usedPrefix + command} ботадмин`},
+	{title: "💬 | OnlyPv", rowId: `${usedPrefix + command} onlydm`},
+	{title: "👥 | OnlyGp", rowId: `${usedPrefix + command} onlygp`},
+  {title: "🔗 | АНТИССЫЛКА 2",  rowId: `${usedPrefix + command} антиссылка2`},
 	]
     },
 ]
 
 const listMessage = {
-  text: '\Здесь есть список того, что вы можете включать и выключать',
+  text: '\nСписок доступных для включения и отключения функций',
   footer: fgig,
-  title: `≡ Список опций`,
-  buttonText: "Нажмите Здесь",
+  title: `≡ Список автоматических функций`,
+  buttonText: "Нажми здесь",
   sections
 }
 
-  let isEnable = /true|enable|(turn)?on|1/i.test(command)
+  let isEnable = /включить|enable|(turn)?on|1/i.test(command)
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
   let bot = global.db.data.settings[conn.user.jid] || {}
@@ -49,7 +54,7 @@ const listMessage = {
       chat.welcome = isEnable
       break
       
-      case 'обнаруживать':
+      case 'слежка':
       case 'detector':
         if (!m.isGroup) {
          if (!isOwner) {
@@ -63,7 +68,7 @@ const listMessage = {
        chat.detect = isEnable
      break
     
-    case 'противоскользящий':
+    case 'антиудаление':
     case 'delete':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -74,14 +79,14 @@ const listMessage = {
       chat.delete = !isEnable
       break
 
-    case 'document':
+    case 'документ':
     case 'documento':
     if (m.isGroup) {
         if (!(isAdmin || isOwner)) return dfail('admin', m, conn)
       }
     chat.useDocument = isEnable
     break
-    case 'публичный':
+    case 'public':
     case 'publico':
       isAll = true
       if (!isROwner) {
@@ -101,8 +106,17 @@ const listMessage = {
       }
       chat.antiLink = isEnable
       break
+
+      case 'антиссылка2':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiLink2 = isEnable          
+break
       
-      case 'sololatinos':
+      case 'антиараб':
       case 'sololatino':
       case 'onlylatinos':
       case 'onlylat':
@@ -114,11 +128,12 @@ const listMessage = {
           throw false
         }
       }
+      
       chat.onlyLatinos = isEnable
       break
       
       case 'nsfw':
-      case '+18':
+      case '18+':
        if (m.isGroup) {
          if (!(isAdmin || isOwner)) {
            global.dfail('admin', m, conn)
@@ -127,7 +142,7 @@ const listMessage = {
     chat.nsfw = isEnable          
     break
 
-    case 'уроввень':
+    case 'автоуровень':
     isUser = true
      user.autolevelup = isEnable
      break
@@ -139,7 +154,7 @@ const listMessage = {
       user.chatbot = isEnable
      break
      
-    case 'ограничивать':
+    case 'ботадмин':
     case 'restringir':
       isAll = true
       if (!isOwner) {
@@ -161,7 +176,7 @@ const listMessage = {
       global.opts['pconly'] = isEnable
       break
       
-    case 'только группы':
+    case 'gponly':
     case 'onlygp':
     case 'grouponly':
     case 'sologp':
@@ -176,21 +191,26 @@ const listMessage = {
       
     default:
       if (!/[01]/.test(command)) return m.reply(`
-≡Список опций
+≡ Список автоматических функций
 
-┌─⊷ *АДМИН*
+┌─⊷ *Для админов*
 ▢ приветствие
 ▢ антиссылка
-▢ обнаруживать
+▢ слежка 
+▢ документ
+▢ 18+
+▢ антиараб
 └───────────── 
-┌─⊷ *ПОЛЬЗОВАТЕЛИ*
-▢ уровень
-▢ чат-бот 
+┌─⊷ *Для пользователей*
+▢ автоуровень
+▢ чатбот 
 └─────────────
-┌─⊷ *ВЛАДЕЛЕЦ*
-▢ публичный
+┌─⊷ *Для владельца*
+▢ public
+▢ solopv
+▢ sologp
 └─────────────
-*📌 Выбор команды :*
+*📌 Пример :*
 *${usedPrefix}включить* приветствие
 *${usedPrefix}выключить* приветствие
 `)
@@ -198,12 +218,12 @@ const listMessage = {
 }
 
 m.reply(`
-✅ *${type}*  *${isEnable ? 'Активировать' : 'Готово'}* ${isAll ? 'для этого бота' : isUser ? '' : 'для этого чата'}
+✅ *${type}* Функция *${isEnable ? 'Включена' : 'Выключена'}* ${isAll ? 'для бота' : isUser ? '' : 'для группы'}
 `.trim()) 
 
 }
-handler.help = ['en', 'dis'].map(v => v + 'able <option>')
-handler.tags = ['nable']
-handler.command = /^((вкл|выкл)ючить|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
+handler.help = ['вкл', 'выкл'].map(v => v + 'ючить <опция>')
+handler.tags = ['Опции']
+handler.command = /^((en|dis)able|(вкл|выкл)ючить|(turn)?o(n|ff)|[01])$/i
 
 export default handler
