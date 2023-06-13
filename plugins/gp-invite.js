@@ -1,8 +1,8 @@
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-if (!text) throw `✳️ Ingrese el número al que quiere enviar una invitación al grupo\n\n📌 Ejemplo :\n*${usedPrefix + command}* 79531126750`
-if (text.includes('+')) throw  `✳️ Ingrese el número todo junto sin el *+*`
-if (isNaN(text)) throw ' 📌 Ingrese sólo números más su código de país sin espacios'
+if (!text) throw `✳️ Введите номер, на который вы хотите отправить приглашение в группу\n\n📌 Например :\n*${usedPrefix + command}* 79531126750`
+if (text.includes('+')) throw  `✳️ Введите номер все вместе без *+*`
+if (isNaN(text)) throw ' 📌 Вводите только цифры плюс код вашей страны без пробелов'
 let group = m.chat
 let link = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group)
  
@@ -10,9 +10,9 @@ let link = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group)
         m.reply(`✅ Se envió un enlace de invitación al usuario`) 
 
 }
-handler.help = ['invite <549xxx>']
+handler.help = ['преглосить <549xxx>']
 handler.tags = ['group']
-handler.command = ['invite','invitar'] 
+handler.command = ['преглосить','invitar'] 
 handler.group = true
 handler.admin = false
 handler.botAdmin = true

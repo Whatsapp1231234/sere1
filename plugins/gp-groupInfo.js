@@ -7,39 +7,39 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
     let text = `
-┌──「 *ИНФОРМАЦИЯ О ГРУППЕ* 」
-▢ *♻️ID:*
+┌──「 *Информация о группе* 」
+▢ *♻️ИД:*
    • ${groupMetadata.id}
-▢ *🔖Имя* : 
+▢ *🔖Название* : 
 • ${groupMetadata.subject}
-▢ *👥Miembros* :
+▢ *👥Участников* :
 • ${participants.length}
-▢ *🤿Dueño de Grupo:*
+▢ *🤿Создатель группы:*
 • @${owner.split('@')[0]}
-▢ *🕵🏻‍♂️Admins:*
+▢ *🕵🏻‍♂️Админы:*
  ${listAdmin}
-▢ *🪢 Configuración de grupo:*
-• ${isBanned ? '✅' : '❎'} Baneado
-• ${welcome ? '✅' : '❎'} Bienvenida
-• ${detect ? '✅' : '❎'} Detector
-• ${del ? '❎' : '✅'} Anti Delete
-• ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
+▢ *🪢 Функции включенные в группе:*
+• ${isBanned ? '✅' : '❎'} Забанить
+• ${welcome ? '✅' : '❎'} Приветствие
+• ${detect ? '✅' : '❎'} Изменения
+• ${del ? '❎' : '✅'} Антиудаление
+• ${antiLink ? '✅' : '❎'} Антиссылка
 
-*▢  📬 Configuración de mensajes:*
-• Bienvenida: ${sWelcome}
-• Despedida: ${sBye}
-• Promovidos: ${sPromote}
-• Degradados: ${sDemote}
+*▢  📬 Настройка сообщений:*
+• Приветствие: ${sWelcome}
+• Прощание: ${sBye}
+• Назначение админом: ${sPromote}
+• Снятие админа: ${sDemote}
 
-▢ *📌Descripción* :
-   • ${groupMetadata.desc?.toString() || 'desconocido'}
+▢ *📌Описание группы* :
+   • ${groupMetadata.desc?.toString() || 'неизвестный'}
 `.trim()
     conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
 
-handler.help = ['мнфогруппы']
+handler.help = ['инфогруппы']
 handler.tags = ['group']
-handler.command = ['мнфогруппы', 'groupinfo', 'infogp'] 
+handler.command = ['infogrupo', 'groupinfo', 'инфогруппы'] 
 handler.group = true
 
 export default handler
