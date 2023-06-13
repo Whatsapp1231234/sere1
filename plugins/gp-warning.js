@@ -4,36 +4,36 @@ let handler = async (m, { conn, text, args, groupMetadata, usedPrefix, command }
         let who
         if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
         else who = m.chat
-        if (!who) throw `✳️ Etiqueta o menciona a alguien\n\n📌 Ejemplo : ${usedPrefix + command} @user`
-        if (!(who in global.db.data.users)) throw `✳️ El usuario no se encuentra en mi base de datos`
+        if (!who) throw `✳️ Пометьте или упомяните кого-нибудь\n\n📌 Например : ${usedPrefix + command} @user`
+        if (!(who in global.db.data.users)) throw `✳️ Пользователя нет в моей базе данных`
         let name = conn.getName(m.sender)
         let warn = global.db.data.users[who].warn
         if (warn < war) {
             global.db.data.users[who].warn += 1
             m.reply(`
-⚠️ *Usuario Advertido* ⚠️
+⚠️ *Пользователь Предупрежден* ⚠️
 
-▢ *Admin:* ${name}
-▢ *Usuario:* @${who.split`@`[0]}
-▢ *Warns:* ${warn + 1}/${war}
-▢ *Razon:* ${text}`, null, { mentions: [who] }) 
+▢ *Админ:* ${name}
+▢ *Пользователь:* @${who.split`@`[0]}
+▢ *Предуприждение:* ${warn + 1}/${war}
+▢ Причина:* ${text}`, null, { mentions: [who] }) 
             m.reply(`
-⚠️ *ADVERTENCIA* ⚠️
-Recibiste una advertencia de un admin
+⚠️ *ПРЕДУПРЕЖДЕНИЕ* ⚠️
+Вы получили предупреждение от администратора
 
-▢ *Warns:* ${warn + 1}/${war} 
-Si recibes *${war}* advertencias serás eliminado automáticamente del grupo`, who)
+▢ *Предупреждает:* ${warn + 1}/${war} 
+Si отзывы *${war}*предупреждения вы будете автоматически удалены из группы`, who)
         } else if (warn == war) {
             global.db.data.users[who].warn = 0
-            m.reply(`⛔ El usuario superó las *${war}* advertencias por lo tanto será eliminado`)
+            m.reply(`⛔ Пользователь превысил *${war}*предупреждения, следовательно, будут удалены`)
             await time(3000)
-            await conn.groupParticipantsUpdate(m.chat, [who], 'remove')
-            m.reply(`♻️ Fuiste eliminado del grupo *${groupMetadata.subject}* porque ha sido advertido *${war}* veces`, who)
+            await conn.groupParticipantsUpdate(m.chat, [who], 'удалить')
+            m.reply(`♻️Ты был исключен из группы *${groupMetadata.subject}*потому что он был предупрежден *${war}* разы`, who)
         }
 }
-handler.help = ['warn @user']
+handler.help = ['предуприждение @user']
 handler.tags = ['group']
-handler.command = ['warn'] 
+handler.command = ['предуприждение'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
