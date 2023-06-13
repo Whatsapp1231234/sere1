@@ -1,7 +1,7 @@
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 	
-if (!m.quoted) throw `✳️ Responde al mensaje que desea eliminar`
+if (!m.quoted) throw `✳️ Отвечает на сообщение, которое вы хотите удалить`
 try {
 let delet = m.message.extendedTextMessage.contextInfo.participant
 let bang = m.message.extendedTextMessage.contextInfo.stanzaId
@@ -10,9 +10,9 @@ return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id
 return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
 }
 }
-handler.help = ['delete']
+handler.help = ['удалить']
 handler.tags = ['group']
-handler.command = /^del(ete)?$/i
+handler.command = /^удалить)?$/i
 handler.group = false
 handler.admin = true
 handler.botAdmin = true

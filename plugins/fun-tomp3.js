@@ -14,8 +14,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         m.reply(`✳️ Ответьте на видео или голосовую заметку, которую вы хотите преобразовать в mp3, с помощью команды :\n\n*${usedPrefix + command}*`)
    }
 }
-handler.help = ['музыка']
+handler.help = ['аудио']
 handler.tags = ['fun']
-handler.command = ['музыка', 'mp3', 'toudio'] 
+handler.command = ['аудио', 'mp3', 'toudio'] 
 
 export default handler

@@ -7,10 +7,10 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
     let text = `
-┌──「 *INFO DE GRUPO* 」
+┌──「 *ИНФОРМАЦИЯ О ГРУППЕ* 」
 ▢ *♻️ID:*
    • ${groupMetadata.id}
-▢ *🔖Nombre* : 
+▢ *🔖Имя* : 
 • ${groupMetadata.subject}
 ▢ *👥Miembros* :
 • ${participants.length}
@@ -37,9 +37,9 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
 
-handler.help = ['infogp']
+handler.help = ['мнфогруппы']
 handler.tags = ['group']
-handler.command = ['infogrupo', 'groupinfo', 'infogp'] 
+handler.command = ['мнфогруппы', 'groupinfo', 'infogp'] 
 handler.group = true
 
 export default handler
