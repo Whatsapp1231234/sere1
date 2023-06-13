@@ -6,9 +6,9 @@ let handler  = async (m, { conn, args, text, usedPrefix, command }) => {
   conn.sendFile(m.chat, res.getRandom(), 'img.png', `
 ✅ Результат : *${text}*`.trim(), m)
 }
-handler.help = ['imagen']
+handler.help = ['поиск']
 handler.tags = ['img']
-handler.command = /^(img|image|gimage|imagen)$/i
+handler.command = /^(img|image|gimage|поиск)$/i
 handler.diamond = true
 
 export default handler
