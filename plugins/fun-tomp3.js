@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     if (!audio.data) throw '❎Ошибка при преобразовании'
     conn.sendFile(m.chat, audio.data, 'audio.mp3', '', m, null, { mimetype: 'audio/mp4' })
     } catch (e) {
-        m.reply(`✳️ Responda al video o nota de voz que desea convertir a mp3 con el comando :\n\n*${usedPrefix + command}*`)
+        m.reply(`✳️ Ответьте на видео или голосовую заметку, которую вы хотите преобразовать в mp3, с помощью команды :\n\n*${usedPrefix + command}*`)
    }
 }
 handler.help = ['музыка']
