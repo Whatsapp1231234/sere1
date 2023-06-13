@@ -4,30 +4,26 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 	
 const sections = [
    {
-	title: `≡ Lista de Opciones`,
+	title: `≡ Список опций`,
 	rows: [
 	{title: "🔮 | Приветствие", rowId: `${usedPrefix + command} приветствие`},
-	{title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
-	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
-	{title: "🧬 | OnlyLatinos", rowId: `${usedPrefix + command} onlylatinos`},
-	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
-    {title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
-	{title: "⏏️ | Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
-	{title: "🗣️ | ChatBot", rowId: `${usedPrefix + command} chatbot`},
-	{title: "🔎 | Detect", rowId: `${usedPrefix + command} detect`},
-	{title: "📑 | Document", rowId: `${usedPrefix + command} document`},
-	{title: "🛡️ | Restrict", rowId: `${usedPrefix + command} restrict`},
-	{title: "💬 | OnlyPv", rowId: `${usedPrefix + command} onlydm`},
-	{title: "👥 | OnlyGp", rowId: `${usedPrefix + command} onlygp`}
+	{title: "🌎 | Публичный", rowId: `${usedPrefix + command} публичный`},,
+	{title: "🔗 | Антиссылка", rowId: `${usedPrefix + command} антиссылка`},
+    {title: "🚫 | Противоскользящий", rowId: `${usedPrefix + command} противоскользящий`},
+	{title: "⏏️ | Уроввень", rowId: `${usedPrefix + command} уроввень`},
+	{title: "🗣️ | Чат-бот", rowId: `${usedPrefix + command} чатбот`},
+	{title: "🔎 | Обнаруживать", rowId: `${usedPrefix + command} обнаруживать`},
+	{title: "🛡️ | Ограничивать", rowId: `${usedPrefix + command} ограничивать`},
+	{title: "👥 | Только-группы", rowId: `${usedPrefix + command} толькогруппы`}
 	]
     },
 ]
 
 const listMessage = {
-  text: '\nAquí tiene una lista de lo que puede activar y desactivar',
+  text: '\Здесь есть список того, что вы можете включать и выключать',
   footer: fgig,
-  title: `≡ Lista de Opciones`,
-  buttonText: "Click Aquí",
+  title: `≡ Список опций`,
+  buttonText: "Нажмите Здесь",
   sections
 }
 
@@ -53,7 +49,7 @@ const listMessage = {
       chat.welcome = isEnable
       break
       
-      case 'detect':
+      case 'обнаруживать':
       case 'detector':
         if (!m.isGroup) {
          if (!isOwner) {
@@ -67,7 +63,7 @@ const listMessage = {
        chat.detect = isEnable
      break
     
-    case 'antidelete':
+    case 'противоскользящий':
     case 'delete':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -85,7 +81,7 @@ const listMessage = {
       }
     chat.useDocument = isEnable
     break
-    case 'public':
+    case 'публичный':
     case 'publico':
       isAll = true
       if (!isROwner) {
@@ -94,7 +90,7 @@ const listMessage = {
       }
       global.opts['self'] = !isEnable
       break
-    case 'antilink':
+    case 'антиссылка':
     case 'antilinkwa':
     case 'antilinkwha':
       if (m.isGroup) {
@@ -131,19 +127,19 @@ const listMessage = {
     chat.nsfw = isEnable          
     break
 
-    case 'autolevelup':
+    case 'уроввень':
     isUser = true
      user.autolevelup = isEnable
      break
      
-     case 'chatbot':
+     case 'чатбот':
      case 'autosimi':
      case 'autosimsimi':
       isUser = true
       user.chatbot = isEnable
      break
      
-    case 'restrict':
+    case 'ограничивать':
     case 'restringir':
       isAll = true
       if (!isOwner) {
@@ -165,7 +161,7 @@ const listMessage = {
       global.opts['pconly'] = isEnable
       break
       
-    case 'gponly':
+    case 'только группы':
     case 'onlygp':
     case 'grouponly':
     case 'sologp':
@@ -182,22 +178,17 @@ const listMessage = {
       if (!/[01]/.test(command)) return m.reply(`
 ≡ Lista de Opciones
 
-┌─⊷ *ADMIN*
+┌─⊷ *АДМИН*
 ▢ приветствие
-▢ antilink
-▢ detect 
-▢ document
-▢ nsfw
-▢ onlylatinos
+▢ антиссылка
+▢ обнаруживать
 └───────────── 
-┌─⊷ *USERS*
-▢ autolevelup
-▢ chatbot 
+┌─⊷ *ПОЛЬЗОВАТЕЛИ*
+▢ уровень
+▢ чат-бот 
 └─────────────
-┌─⊷ *OWNER*
-▢ public
-▢ solopv
-▢ sologp
+┌─⊷ *ВЛАДЕЛЕЦ*
+▢ публичный
 └─────────────
 *📌 Ejemplo :*
 *${usedPrefix}включить* приветствие
@@ -207,7 +198,7 @@ const listMessage = {
 }
 
 m.reply(`
-✅ *${type}*  *${isEnable ? 'Activó' : 'Готова'}* ${isAll ? 'для этого бота' : isUser ? '' : 'для этого чата'}
+✅ *${type}*  *${isEnable ? 'Activó' : 'Готово'}* ${isAll ? 'для этого бота' : isUser ? '' : 'для этого чата'}
 `.trim()) 
 
 }

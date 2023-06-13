@@ -6,7 +6,7 @@ let handler = async (m, { conn, text }) => {
     else who = m.chat
     if (!who) throw '✳️ Taguea al usuario'
     let txt = text.replace('@' + who.split`@`[0], '').trim()
-    if (!txt) throw '✳️ Ingrese la cantidad de *Diamantes* que quiere añadir'
+    if (!txt) throw '✳️ Введите количество* Бриллиантов*, которые вы хотите добавить'
     if (isNaN(txt)) throw '🔢 sólo números'
     let dmt = parseInt(txt)
     let diamond = dmt
