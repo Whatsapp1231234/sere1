@@ -11,8 +11,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (json.success) m.reply(json.success.replace('simsimi', 'DyLux').replace('Simsimi', 'DyLux').replace('sim simi', 'DyLux'))
   else throw json
 }
-handler.help = ['bot']
+handler.help = ['бот']
 handler.tags = ['fun']
-handler.command = ['bot', 'simi'] 
+handler.command = ['бот', 'simi'] 
 
 export default handler
