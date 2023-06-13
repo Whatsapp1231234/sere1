@@ -4,11 +4,11 @@ let handler = async (m, { conn, usedPrefix, command, args: [event], text }) => {
   let chat = global.db.data.chats[m.chat]
   if (!chat.welcome) throw `✳️ Para usar este comando debe actvar las Bienvenidas con *${usedPrefix}on* welcome`
   let te = `
-  ┌─⊷ *EVENTOS*
-  ▢ welcome
-  ▢ bye
+  ┌─⊷ *СОБЫТИЯ*
+  ▢ приветствие
+  ▢ пока
   ▢ promote
-  ▢ demote
+  ▢ понижать
   └───────────
   
   📌 Ejemplo :
