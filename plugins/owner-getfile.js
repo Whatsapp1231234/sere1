@@ -10,7 +10,7 @@ let handler = async (m, { conn, isROwner, usedPrefix, command, text }) => {
   
   if (!text) {
     throw `
-✳️ Uso del comando : ${usedPrefix + command} <name file>
+✳️ Использование команды: ${usedPrefix + command} <name file>
       
 📌 Ejemplo:
 ${usedPrefix + command} main-menu
@@ -22,7 +22,7 @@ ${usedPrefix + command} main-menu
 📌 *Ejemplo:* 
  ${usedPrefix + command} main-menu 
       
-      ≡ *Lista de Plugins*
+      ≡ *Список плагинов*
 ┌─⊷
  ${pluginNames.map(name => `▢ ${name}`).join('\n')}
 └───────────
@@ -46,9 +46,9 @@ ${usedPrefix + command} main-menu
     m.reply('❎ Error')
   }
 };
-handler.help = ['getplugin']
+handler.help = ['внутриности']
 handler.tags = ['owner']
-handler.command = ['getplugin']
+handler.command = ['внутриности']
 handler.rowner = true
 
 export default handler

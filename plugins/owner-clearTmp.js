@@ -6,7 +6,7 @@ import { readdirSync, unlinkSync, rmSync } from 'fs';
 
 let handler = async (m, { conn, __dirname, args }) => {
 
-  m.reply(`✅ Se limpió la carpeta *tmp + sessions*`);
+  m.reply(`✅ Папка *tmp + сеансы очищена*`);
   m.react(done);
   // -- eliminar archivos temporales ---
   const tmpDirs = [tmpdir(), join(__dirname, '../tmp')];
@@ -45,9 +45,9 @@ readdirSync(bbtSessions, { withFileTypes: true }).forEach((file) => {
 
 //--
 };
-handler.help = ['cleartmp'];
+handler.help = ['кеш'];
 handler.tags = ['owner'];
-handler.command = /^(cleartmp)$/i;
+handler.command = /^(кеш)$/i;
 handler.rowner = true;
 
 export default handler;

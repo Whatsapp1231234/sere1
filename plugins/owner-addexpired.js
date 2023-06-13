@@ -10,7 +10,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     var now = new Date() * 1
     if (now < global.db.data.chats[who].expired) global.db.data.chats[who].expired += nDays
     else global.db.data.chats[who].expired = now + nDays
-    let teks = `✅ Se estableció los días de vencimiento para \n*${await conn.getName(who)}* \n\n*Durante:* ${args[0]} Días\n\n*Cuenta regresiva :* ${msToDate(global.db.data.chats[who].expired - now)}`
+    let teks = `✅ Были установлены дни истечения срока действия для \n*${await conn.getName(who)}* \n\n*Durante:* ${args[0]} Días\n\n*Cuenta regresiva :* ${msToDate(global.db.data.chats[who].expired - now)}`
     conn.reply(m.chat, teks, m)
 }
 handler.help = ['expired <días>']

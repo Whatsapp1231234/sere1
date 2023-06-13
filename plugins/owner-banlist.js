@@ -5,9 +5,9 @@ let handler = async (m, { conn, usedPrefix }) => {
     let users = Object.entries(global.db.data.users).filter(user => user[1].banned)
     
     m.reply(`
-≡ *USUARIOS BANEADOS*
+≡ *ЗАБЛОКИРОВАННЫЕ ПОЛЬЗОВАТЕЛИ*
 
-▢ Total : *${users.length}* 
+▢ Общий : *${users.length}* 
 
 ${users ? '\n' + users.map(([jid], i) => `
 ${i + 1}. ${conn.getName(jid) == undefined ? 'Desconocido' : conn.getName(jid)}
@@ -15,8 +15,8 @@ ${i + 1}. ${conn.getName(jid) == undefined ? 'Desconocido' : conn.getName(jid)}
 `.trim()).join('\n') : ''}
 `.trim())
 }
-handler.help = ['listban']
+handler.help = ['листбан']
 handler.tags = ['owner']
-handler.command = ['banlist', 'listban'] 
+handler.command = ['листбан', 'listban'] 
 
 export default handler
