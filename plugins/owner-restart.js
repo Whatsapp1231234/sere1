@@ -7,9 +7,9 @@ let handler = async (m, { conn, isROwner, text }) => {
   } else throw 'eh'
 }
 
-handler.help = ['restart']
+handler.help = ['перезагрузка']
 handler.tags = ['owner']
-handler.command = ['restart','reiniciar'] 
+handler.command = ['перезагрузка','reiniciar'] 
 
 handler.rowner = true
 
