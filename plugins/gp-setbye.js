@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, isROwner, isOwner }) => {
     m.reply('✅ Было установлено прощальное послание')
   } else throw `✳️ Введите сообщение\n@user (упоминание)`
 }
-handler.help = ['прощание <text>']
+handler.help = ['прощание <текст>']
 handler.tags = ['group']
 handler.command = ['прощание'] 
 handler.admin = true
