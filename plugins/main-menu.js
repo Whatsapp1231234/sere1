@@ -28,7 +28,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-◈ ━━━━━ *ZloiBoT* ━━━━━ ◈
+◈ ━━━━━ *꧁ঔৣ♚☠︎✞BOTPRO✞☠︎♚ঔৣ꧂* ━━━━━ ◈
  
 👋🏻 _Привет_ *%name*
 🧿 Уровень : *%level* 
@@ -156,7 +156,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     m.react('📚') 
     
   } catch (e) {
-    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error', m)
+    conn.reply(m.chat, '❎ Извините, в меню есть ошибка', m)
     throw e
   }
 }

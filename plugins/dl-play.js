@@ -22,9 +22,9 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     ['🎥 MP4', `${usedPrefix}fgmp4 ${url}`]
   ], m, rpl)
 }
-handler.help = ['песня']
+handler.help = ['музыка']
 handler.tags = ['dl']
-handler.command = ['play', 'песня']
+handler.command = ['play', 'музыка']
 handler.disabled = true
 
 export default handler
