@@ -35,9 +35,9 @@ m.react(done)
 } 
     
 }  
-handler.help = ['tiktok']
+handler.help = ['тикток']
 handler.tags = ['dl']
-handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm)$/i
+handler.command = /^(тикток|тт|tiktokdl|tiktoknowm)$/i
 handler.diamond = true
 
 export default handler

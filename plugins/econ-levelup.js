@@ -44,7 +44,7 @@ try {
 ▢ Rango : *${user.role}*
 └──────────────
 
-*_Cuanto más interactúes con los bots, mayor será tu nivel_*
+*_Чем больше вы взаимодействуете с ботами, тем выше ваш уровень_*
 `.trim()
         try {
             let img = API('fgmods', '/api/maker/levelup', { 

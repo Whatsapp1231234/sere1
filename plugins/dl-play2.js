@@ -47,8 +47,8 @@ if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : $
     }
 
 }
-handler.help = ['play']
+handler.help = ['плей']
 handler.tags = ['dl']
-handler.command = ['play', 'playvid']
+handler.command = ['плей', 'playvid']
 
 export default handler
