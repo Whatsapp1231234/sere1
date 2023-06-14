@@ -5,14 +5,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
     else who = m.chat
     let user = global.db.data.users[who]
-    if (!who) throw `✳️ Etiqueta o menciona al usuario para desbanear`
+    if (!who) throw `✳️ Пометьте или упомяните пользователя, чтобы отменить удаление`
     let users = global.db.data.users
     users[who].banned = false
     conn.reply(m.chat, `
 ✅ DESBANEO
 
 ───────────
-@${who.split`@`[0]} ha sido desbaneado`, m, { mentions: [who] })
+@${who.split`@`[0]} это было отменено`, m, { mentions: [who] })
 }
 handler.help = ['unban @user']
 handler.tags = ['owner']

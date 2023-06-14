@@ -5,35 +5,35 @@ let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { conn, text, usedPrefix, command }) {
   let user = global.db.data.users[m.sender]
   let name2 = conn.getName(m.sender)
-  if (user.registered === true) throw `✳️ Ya estás registrado\n\n¿Quiere volver a registrarse?\n\n 📌 Use este comando para eliminar su registro \n*${usedPrefix}unreg* <Número de serie>`
-  if (!Reg.test(text)) throw `⚠️ Formato incorrecto\n\n ✳️ Uso del comamdo: *${usedPrefix + command} nombre.edad*\n📌Ejemplo : *${usedPrefix + command}* ${name2}.16`
+  if (user.registered === true) throw `✳️ Вы уже зарегистрированы\n\n¿Хочет перерегистрироваться?\n\n 📌Используйте эту команду, чтобы удалить свою запись \n*${usedPrefix}unreg* <Серийный номер>`
+  if (!Reg.test(text)) throw `⚠️ Неправильный формат\n\n ✳️ Использование комамдо: *${usedPrefix + command} имя. возраст*\n📌Пример : *${usedPrefix + command}* ${name2}.26`
   let [_, name, splitter, age] = text.match(Reg)
-  if (!name) throw '✳️ El nombre no puede estar vacío'
-  if (!age) throw '✳️ La edad no puede estar vacía'
-  if (name.length >= 30) throw '✳️ El nombre es demasiado largo' 
+  if (!name) throw '✳️ Имя не может быть пустым'
+  if (!age) throw '✳️ Возраст не может быть пустым'
+  if (name.length >= 30) throw '✳️ Имя слишком длинное' 
   age = parseInt(age)
-  if (age > 100) throw '👴🏻 Wow el abuelo quiere jugar al bot'
-  if (age < 5) throw '🚼  hay un abuelo bebé jsjsj '
+  if (age > 100) throw '👴🏻 Вау, дедушка хочет поиграть в бота'
+  if (age < 5) throw '🚼  есть дедушка, малыш, хи хи хи '
   user.name = name.trim()
   user.age = age
   user.regTime = + new Date
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
   m.reply(`
-┌─「 *REGISTRADO* 」─
-▢ *Nombre:* ${name}
-▢ *Edad* : ${age} años
-▢ *Numero de serie* :
+┌─「 *ЗАРЕГИСТРИРОВАННЫЙ* 」─
+▢ *Имя:* ${name}
+▢ *Возраст* : ${age} лета
+▢ *Номер серии* :
 ${sn}
 └──────────────
 
  *${usedPrefix}help* para ver el Menu
 `.trim())
 }
-handler.help = ['reg'].map(v => v + ' <nombre.edad>')
+handler.help = ['регистрацыя'].map(v => v + ' <nombre.edad>')
 handler.tags = ['rg']
 
-handler.command = ['verify', 'reg', 'register', 'registrar'] 
+handler.command = ['verify', 'регистрацыя', 'register', 'registrar'] 
 
 export default handler
 
