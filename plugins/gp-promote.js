@@ -7,7 +7,7 @@ var number = text.split`@`[1]
 var number = text
 }
 if(!text && !m.quoted) return conn.reply(m.chat, `✳️ Использование комамдо \n *${usedPrefix + command}* @tag  (o responda un mensaje)`, m)
-if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `✳️ Numero incorrecto`, m)
+if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `✳️Неправильный номер`, m)
 try {
 if(text) {
 var user = number + '@s.whatsapp.net'
