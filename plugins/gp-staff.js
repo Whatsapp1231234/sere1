@@ -13,8 +13,8 @@ let text = `
 `.trim()
 conn.sendFile(m.chat, pp, 'staff.png', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
-handler.help = ['админы']
+handler.help = ['админы1']
 handler.tags = ['group']
-handler.command = ['админы', 'admins', 'listadmin'] 
+handler.command = ['админы1', 'admins', 'listadmin'] 
 handler.group = true
 export default handler
