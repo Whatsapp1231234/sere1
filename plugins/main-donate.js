@@ -16,8 +16,8 @@ let img = 'https://i.ibb.co/37FP2bk/donate.jpg'
 conn.sendFile(m.chat, img, 'img.jpg', don, m)
 
 }
-handler.help = ['д']
+handler.help = ['ддрпджэодпршнкв']
 handler.tags = ['main']
-handler.command = ['apoyar', 'д', 'donar'] 
+handler.command = ['apoyar', 'donar'] 
 
 export default handler
