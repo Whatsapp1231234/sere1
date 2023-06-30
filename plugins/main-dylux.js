@@ -11,6 +11,7 @@ m.reply(`
 ▢ Выбрать бота который вас устраивает
 ◈ ━━━━━━━━━━━━━━━━━━━━ ◈
 ▢ Группа *1*
+https://chat.whatsapp.com/ECQjIoZ8vwLBywJE6UOTXc
 
 `)
 
