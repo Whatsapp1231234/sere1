@@ -62,6 +62,6 @@ conn.sendFile(m.chat, img, 'img.jpg', don, m)
 }
 handler.help = ['менюшка']
 handler.tags = ['main']
-handler.command = ['менюю',] 
+handler.command = ['менюшка',] 
 
 export default handler
