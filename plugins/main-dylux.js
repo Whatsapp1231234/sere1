@@ -15,8 +15,8 @@ m.reply(`
 `)
 
 }
-handler.help = ['Группа']
+handler.help = ['группа']
 handler.tags = ['main']
-handler.command = ['Группа', 'groupdylux', 'dxgp', 'dygp', 'gpdylux', 'support'] 
+handler.command = ['группа', 'groupdylux', 'dxgp', 'dygp', 'gpdylux', 'support'] 
 
 export default handler
