@@ -2,34 +2,21 @@
 let handler = async (m, { conn }) => {
 
 m.reply(`
-≡  *DyLuxᴮᴼᵀ ┃ SUPPORT*
-
+≡ Группа по боту
+≡ Здесь вы можете 
+◈ ━━━━━━━━━━ ◈
+▢ Проверить бота 
+▢ Проверить функцыонал
+▢ Задать вопросы о боте
+▢ Выбрать бота который вас устраивает
 ◈ ━━━━━━━━━━━━━━━━━━━━ ◈
-▢ Grupo *1*
-https://chat.whatsapp.com/IO9jmpI72ejHiN4unRZleU
+▢ Группа *1*
 
-▢ Grupo *2*
-https://chat.whatsapp.com/CDUqNRu5Kh5KY5uqQI0BKE
-
-▢ Grupo *NSFW* 🔞
-https://chat.whatsapp.com/F0JTTyZ3hsoL7OlU8TEpuH
-
-◈ ━━━━━━━━━━━━━━━━━━━━ ◈
-▢ Todos los Grupos
- https://instabio.cc/fg98ff
-
-▢ *Telegram*
-• https://t.me/fgawgp
-
- ▢ *PayPal*
-• https://paypal.me/fg98f
-
-▢ *YouTube*
-• https://www.youtube.com/fg98f`)
+`)
 
 }
-handler.help = ['support']
+handler.help = ['Группа']
 handler.tags = ['main']
-handler.command = ['grupos', 'groupdylux', 'dxgp', 'dygp', 'gpdylux', 'support'] 
+handler.command = ['Группа', 'groupdylux', 'dxgp', 'dygp', 'gpdylux', 'support'] 
 
 export default handler
