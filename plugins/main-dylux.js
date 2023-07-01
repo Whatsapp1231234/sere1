@@ -27,8 +27,8 @@ https://chat.whatsapp.com/ECQjIoZ8vwLBywJE6UOTXc
 `)
 
 }
-handler.help = ['группа']
+handler.help = ['создатель']
 handler.tags = ['main']
-handler.command = ['группа', 'groupdylux', 'dxgp', 'dygp', 'gpdylux', 'support'] 
+handler.command = ['создатель', 'groupdylux', 'dxgp', 'dygp', 'gpdylux', 'support'] 
 
 export default handler
